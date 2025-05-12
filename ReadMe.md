@@ -21,3 +21,5 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 - **Database**: MySQL
 - **Build Tool**: Maven
 
+## Acknowledgments 🙏
+The frontend design (HTML, CSS, JavaScript) is inspired by online templates and resources. It is not an original creation.
