@@ -35,17 +35,18 @@
 	<body class="" id="top">
 		<div class="main">
 <!--==============================header=================================-->
-			<header>
+			<header xmlns:th="http://www.thymeleaf.org">
+				<div th:with="currentPage=${mycurrentpage}">
 				<div class="menu_block">
 					<div class="container_12">
 						<div class="grid_12">
 							<nav class="horizontal-nav full-width horizontalNav-notprocessed">
 								<ul class="sf-menu">
-									<li><a href="/home">Home</a></li>
-									<li class="/current"><a href="about">About</a></li>
-									<li><a href="/Cars">Cars</a></li>
-									<li><a href="/Services">Services</a></li>
-									<li><a href="/Contact">Contacts</a></li>
+									<li th:class="${mycurrentpage=='/home' || mycurrentpage=='/' || mycurrentpage=='/welcome' || mycurrentpage=='/index' ? 'current' : ''} "><a href="/home">Home</a></li>
+									<li th:class="${mycurrentpage=='/about' ? 'current' : ''} "><a href="/about">About</a></li>
+									<li th:class="${mycurrentpage=='/cars' ? 'current' : ''} "><a href="/cars">Cars</a></li>
+									<li th:class="${mycurrentpage=='/services' ? 'current' : ''} "><a href="/services">Services</a></li>
+									<li th:class="${mycurrentpage=='/contact' ? 'current' : ''} "><a href="/contact">Contacts</a></li>
 								</ul>
 							</nav>
 							<div class="clear"></div>
@@ -63,6 +64,7 @@
 					</div>
 				</div>
 				<div class="clear"></div>
+				</div>
 			</header>
 <!--==============================Content=================================-->
 			<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - April 07, 2014!</div>

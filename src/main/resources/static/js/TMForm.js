@@ -110,7 +110,7 @@
 				return el.val()||false
 			}
 			
-			function formSubmit(){
+			/*function formSubmit(){
 				$('[data-constraints]',form).trigger('validate.form')
 				
 				if(!$('label.'+opt.invalidClass+',label.'+opt.emptyClass,form).length){					
@@ -138,7 +138,7 @@
 					})					
 				}				
 				return false
-			}
+			}*/
 			
 			function formReset(){
 				fieldDesolation($('[data-constraints]',form))					
