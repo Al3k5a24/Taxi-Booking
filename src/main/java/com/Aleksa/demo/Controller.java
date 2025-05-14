@@ -1,24 +1,31 @@
 package com.Aleksa.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 
 @org.springframework.stereotype.Controller
 public class Controller {
-
-	//added method to track site name that user visited
-	//in html added thymeleaf method that sets class current if site is selected
 	
+	private ContactFormService cfs;
+	
+	@Autowired
+	public void setCfsi(ContactFormService cfs) {
+		this.cfs = cfs;
+	}
+
 	@GetMapping(path = {"/", "/home", "/welcome", "/index"})
 	public String welcomeView(HttpServletRequest req,Model m) {
 		String requestURI=req.getRequestURI();
 		m.addAttribute("mycurrentpage",requestURI);
+		m.addAttribute("bookingForm",new BookingForm());
 	    return "home"; 
 	}
 
@@ -40,10 +47,10 @@ public class Controller {
 	public String ServiceView(HttpServletRequest req,Model m) {
 		String requestURI=req.getRequestURI();
 		m.addAttribute("mycurrentpage",requestURI);
-		 m.addAttribute("contactform", new ContactForm()); // Make sure this is added
+		 m.addAttribute("contactform", new ContactForm());
 	    return "services";  
 	}
-	
+	 
 	@GetMapping("/contact")
 	public String ContactView(HttpServletRequest req,Model m) {
 		String requestURI=req.getRequestURI();
@@ -53,13 +60,30 @@ public class Controller {
 	
 	@PostMapping("/services")
 	public String contactform(@Valid @ModelAttribute("contactform") ContactForm contactform,
-			BindingResult bindingresult,Model m) {
+			BindingResult bindingresult,Model m, RedirectAttributes redirectAttributes) {
 		if(bindingresult.hasErrors()) {
-			m.addAttribute("contactform", contactform);
 			m.addAttribute("bindingresult",bindingresult);
 			return "services";  
 		}
-	    System.out.println("Forma primljena: " + contactform);
-	    return "services";  
+		
+		ContactForm savecfs=cfs.saveContactService(contactform);
+		if(savecfs!=null) {
+			redirectAttributes.addFlashAttribute("message","Message sent successfully!");
+		}else {
+			redirectAttributes.addFlashAttribute("message","Something went wrong!");
+		}
+		
+	    return "redirect:/services"; 
+	}
+	
+	@PostMapping("/home")
+	public String bookingform(@Valid @ModelAttribute("bookingForm") BookingForm bookingform,
+			BindingResult bindingresult,Model m, RedirectAttributes redirectAttributes) {
+		if(bindingresult.hasErrors()) {
+			m.addAttribute("bindingresult",bindingresult);
+			return "/home";  
+		}
+		
+	    return "redirect:/home"; 
 	}
 }
