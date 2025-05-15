@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<title>Home</title>
 		<meta charset="utf-8">
@@ -151,84 +151,89 @@
 			<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - April 07, 2014!</div>
 				<div class="container_12">
 					<div class="grid_5">
-						
-						<h3>Booking Form</h3>
-						<form id="bookingForm" th:action="@{/home}" method="post" th:object="${bookingForm}">
-							<div class="fl1">
-								<div class="tmInput">
-									<input name="name" placeHolder="Name:" type="text" data-constraints='@NotEmpty @Required @AlphaSpecial'>
-									<span style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
-								</div>
-								<div class="tmInput">
-									<input name="from" placeHolder="From:" type="text" data-constraints="@NotEmpty @Required ">
-									<span style="color:red" th:if="${#fields.hasErrors('from')}" th:errors="*{from}"></span>
-								</div>
-							</div>
-							<div class="fl1">
-								<div class="tmInput">
-									<input name="email" placeHolder="Email:" type="text" data-constraints="@NotEmpty @Required @Email">
-									<span style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
-								</div>
-								<div class="tmInput mr0">
-									<input name="to" placeHolder="To:" type="text" data-constraints="@NotEmpty @Required">
-									<span style="color:red" th:if="${#fields.hasErrors('to')}" th:errors="*{to}"></span>
-								</div>
-							</div>
-							<div class="clear"></div>
-							<strong>Time</strong>
-							<div class="tmInput">
-								<input name="time" placeHolder="" type="text" data-constraints="@NotEmpty @Required">
-								<span style="color:red" th:if="${#fields.hasErrors('time')}" th:errors="*{time}"></span>
-							</div>
-							<div class="clear"></div>
-							<strong>Date</strong>
-							<label class="tmDatepicker">
-								<input type="text" name="date" data-constraints="@NotEmpty @Required @Date">
-								<span style="color:red" th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></span>
-							</label>
-							<div class="clear"></div>
-							<div class="tmRadio">
-								<p>Comfort</p>
-								<input name="Comfort" type="radio" id="tmRadio0" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' checked/>
-								<span>Cheap</span>
-								<input name="Comfort" type="radio" id="tmRadio1" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' />
-								<span>Standart</span>
-								<input name="Comfort" type="radio" id="tmRadio2" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' />
-								<span>Lux</span>
-							</div>
-							<span style="color:red" th:if="${#fields.hasErrors('comfort')}" th:errors="*{comfort}"></span>
-							<div class="clear"></div>
-							<div class="fl1 fl2">
-								<em>Adult</em>
-								<select name="adult" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
-								<span style="color:red" th:if="${#fields.hasErrors('adult')}" th:errors="*{adult}"></span>
-								<div class="clear height1"></div>
-							</div>
-							<div class="fl1 fl2">
-								<em>Children</em>
-								<select name="children" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
-									<option>0</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>5</option>
-								</select>
-								<span style="color:red" th:if="${#fields.hasErrors('children')}" th:errors="*{children}"></span>
-							</div>
-							<div class="clear"></div>
-							<div class="tmTextarea">
-								<textarea name="message" placeHolder="Message" data-constraints='@NotEmpty @Required @Length(min=20,max=999999)'></textarea>
-							</div>
-							<span style="color:red" th:if="${#fields.hasErrors('message')}" th:errors="*{message}"></span>
-							<button class="btn">Submit</button>
-						</form>
-					</div>
+					    <h3>Booking Form</h3>
+						<h4 th:text="${message}"></h4>
+					    <form id="bookingForm" th:action="@{/home}" method="post" th:object="${bookingForm}">
+					        <div class="fl1">
+					            <div class="tmInput">
+					                <input name="name" th:value="*{name}" placeholder="Name:" type="text" data-constraints='@NotEmpty @Required @AlphaSpecial'>
+					                <span style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+					            </div>
+					            <div class="tmInput">
+					                <input name="from" th:value="*{from}" placeholder="From:" type="text" data-constraints="@NotEmpty @Required">
+					                <span style="color:red" th:if="${#fields.hasErrors('from')}" th:errors="*{from}"></span>
+					            </div>
+					        </div>
+
+					        <div class="fl1">
+					            <div class="tmInput">
+					                <input name="email" th:value="*{email}" placeholder="Email:" type="text" data-constraints="@NotEmpty @Required @Email">
+					                <span style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+					            </div>
+					            <div class="tmInput mr0">
+					                <input name="to" th:value="*{to}" placeholder="To:" type="text" data-constraints="@NotEmpty @Required">
+					                <span style="color:red" th:if="${#fields.hasErrors('to')}" th:errors="*{to}"></span>
+					            </div>
+					        </div>
+
+					        <div class="clear"></div>
+					        <strong>Time</strong>
+					        <div class="tmInput">
+					            <input name="time" th:value="*{time}" placeholder="" type="time" data-constraints="@NotEmpty @Required">
+					            <span style="color:red" th:if="${#fields.hasErrors('time')}" th:errors="*{time}"></span>
+					        </div>
+
+					        <div class="clear"></div>
+					        <strong>Date</strong>
+					        <label class="tmDatepicker">
+					            <input type="text" name="date" th:value="*{date}" data-constraints="@NotEmpty @Required @Date">
+					            <span style="color:red" th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></span>
+					        </label>
+
+					        <div class="clear"></div>
+					        <div class="tmRadio">
+					            <p>Comfort</p>
+					            <input name="comfort" value="cheap" th:checked="*{comfort == 'cheap'}" type="radio" id="tmRadio0">
+					            <span>Cheap</span>
+					            <input name="comfort" value="standard" th:checked="*{comfort == 'standard'}" type="radio" id="tmRadio1">
+					            <span>Standard</span>
+					            <input name="comfort" value="luxury" th:checked="*{comfort == 'luxury'}" type="radio" id="tmRadio2">
+					            <span>Lux</span>
+					        </div>
+					        <span style="color:red" th:if="${#fields.hasErrors('comfort')}" th:errors="*{comfort}"></span>
+
+					        <div class="clear"></div>
+					        <div class="fl1 fl2">
+					            <em>Adult</em>
+					            <select name="adult" class="tmSelect auto">
+					                <option th:selected="*{adult == 1}">1</option>
+					                <option th:selected="*{adult == 2}">2</option>
+					                <option th:selected="*{adult == 3}">3</option>
+					                <option th:selected="*{adult == 4}">4</option>
+					            </select>
+					            <span style="color:red" th:if="${#fields.hasErrors('adult')}" th:errors="*{adult}"></span>
+					        </div>
+
+					        <div class="fl1 fl2">
+					            <em>Children</em>
+					            <select name="children" class="tmSelect auto">
+					                <option th:selected="*{children == 0}">0</option>
+					                <option th:selected="*{children == 1}">1</option>
+					                <option th:selected="*{children == 2}">2</option>
+					                <option th:selected="*{children == 3}">3</option>
+					            </select>
+					            <span style="color:red" th:if="${#fields.hasErrors('children')}" th:errors="*{children}"></span>
+					        </div>
+
+					        <div class="clear"></div>
+					        <div class="tmTextarea">
+					            <textarea name="message" th:text="*{message}" placeholder="Message" data-constraints='@NotEmpty @Required @Length(min=20,max=999999)'></textarea>
+					        </div>
+					        <span style="color:red" th:if="${#fields.hasErrors('message')}" th:errors="*{message}"></span>
+
+					        <button class="btn">Submit</button>
+					    </form>
+                     </div>
 					<div class="grid_6 prefix_1">
 						<a href="index2.html" class="type"><img src="images/page1_img1.jpg" alt=""><span class="type_caption">Economy</span></a>
 						<a href="index2.html" class="type"><img src="images/page1_img2.jpg" alt=""><span class="type_caption">Standard</span></a>

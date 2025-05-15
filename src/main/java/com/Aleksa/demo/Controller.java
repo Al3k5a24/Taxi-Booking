@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 
@@ -15,7 +14,13 @@ import jakarta.validation.Valid;
 public class Controller {
 	
 	private ContactFormService cfs;
+	private saveBookingFormService bfs;
 	
+	@Autowired
+	public void setBfs(saveBookingFormService bfs) {
+		this.bfs = bfs;
+	}
+
 	@Autowired
 	public void setCfsi(ContactFormService cfs) {
 		this.cfs = cfs;
@@ -25,7 +30,7 @@ public class Controller {
 	public String welcomeView(HttpServletRequest req,Model m) {
 		String requestURI=req.getRequestURI();
 		m.addAttribute("mycurrentpage",requestURI);
-		m.addAttribute("bookingForm",new BookingForm());
+		m.addAttribute("bookingForm",new bookingForm());
 	    return "home"; 
 	}
 
@@ -77,11 +82,22 @@ public class Controller {
 	}
 	
 	@PostMapping("/home")
-	public String bookingform(@Valid @ModelAttribute("bookingForm") BookingForm bookingform,
+	public String bookingform(@Valid @ModelAttribute("bookingForm") bookingForm bookingform,
 			BindingResult bindingresult,Model m, RedirectAttributes redirectAttributes) {
 		if(bindingresult.hasErrors()) {
 			m.addAttribute("bindingresult",bindingresult);
 			return "/home";  
+		}else if(bookingform.getAdult()+bookingform.getChildren()>4) {
+			m.addAttribute("message","Total number of passengers can not pass 4!");
+			return "/home"; 
+		}
+		System.out.println(bookingform);
+		
+		bookingForm savebfs=bfs.saveBookingForm(bookingform);
+		if(savebfs!=null) {
+			redirectAttributes.addFlashAttribute("message","Message sent successfully!");
+		}else {
+			redirectAttributes.addFlashAttribute("message","Something went wrong!");
 		}
 		
 	    return "redirect:/home"; 
