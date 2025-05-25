@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Contacts</title>
@@ -98,36 +98,34 @@
 					</div>
 					<div class="grid_6 prefix_1">
 						<h3>Contact Form</h3>
+						<h3 th:text="${message}"></h3>
 						<form id="form" th:action="@{services}" th:object="${contactform}" method="post">
 							<div class="success_wrapper">
 								<div class="success-message">Contact form submitted</div>
 							</div>
 							<label class="name">
 							        <input type="text" name="name" placeholder="Name:" 
-							               data-constraints="@Required @JustLetters" th:field="*{name}" />
-							        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+							               data-constraints="@Required @JustLetters" th:value="${contactform.name}" th:field="*{name}" />
+							        <span style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
 							    </label>
 							    
-							    <!-- Email Field -->
 							    <label class="email">
 							        <input type="text" name="email" placeholder="E-mail:" 
-							               data-constraints="@Required @Email" th:field="*{email}" />
-							        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+							               data-constraints="@Required @Email" th:value="${contactform.email}" th:field="*{email}" />
+							        <span style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
 							    </label>
 							    
-							    <!-- Phone Field -->
 							    <label class="phone">
 							        <input type="text" name="phone" placeholder="Phone:" 
-							               data-constraints="@Required @JustNumbers" th:field="*{phone}" />
-							        <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+							               data-constraints="@Required @JustNumbers" th:value="${contactform.phone}" th:field="*{phone}" />
+							        <span style="color:red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
 							    </label>
-							    
-							    <!-- Message Field -->
+
 							    <label class="message">
-							        <textarea placeholder="Message:" name="message" 
+							        <textarea placeholder="Message:" name="message" th:text="${contactform.message}"
 							               data-constraints='@Required @Length(min=20,max=999999)' 
 							               th:field="*{message}"></textarea>
-							        <span th:if="${#fields.hasErrors('message')}" th:errors="*{message}"></span>
+							        <span style="color:red" th:if="${#fields.hasErrors('message')}" th:errors="*{message}"></span>
 							    </label>
 							<div>
 								<div class="clear"></div>
