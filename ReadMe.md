@@ -29,7 +29,6 @@ A full-featured Java-based Taxi Booking system that allows users to book rides a
 ---
 
 ## Screenshots
-
 <h2 align="center">📸 All screenshots will be available soon at: <a href="https://github.com/YourUsername/TaxiBooking/tree/main/images">Images</a></h2>
 
 ---
