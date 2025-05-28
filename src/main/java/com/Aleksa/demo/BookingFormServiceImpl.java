@@ -32,16 +32,10 @@ public class BookingFormServiceImpl implements saveBookingFormService {
 		
 	}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 	@Override
 	public void save(bookingForm reservation) {
 		// TODO Auto-generated method stub
 		
 	}
 
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
 }
