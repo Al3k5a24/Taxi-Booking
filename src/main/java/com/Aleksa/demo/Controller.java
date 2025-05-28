@@ -1,13 +1,9 @@
 package com.Aleksa.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import org.springframework.messaging.simp.SimpMessagingTemplate;
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
+
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -105,16 +101,10 @@ public class Controller {
 		
 	    return "redirect:/services"; 
 	}
-	
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 	@Autowired
 	private SimpMessagingTemplate messagingTemplate;
-	
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
+
 	@PostMapping("/home")
 	public String bookingform(@Valid @ModelAttribute("bookingForm") bookingForm bookingform,
 			BindingResult bindingresult,Model m, RedirectAttributes redirectAttributes) {
@@ -130,13 +120,8 @@ public class Controller {
 		bookingForm savebfs=bfs.saveBookingForm(bookingform);
 		if(savebfs!=null) {
 			redirectAttributes.addFlashAttribute("message","Message sent successfully!");
-<<<<<<< HEAD
-<<<<<<< HEAD
 			messagingTemplate.convertAndSend("/topic/notifications", "New reservation from " + bookingform.getName());
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
+
 		}else {
 			redirectAttributes.addFlashAttribute("message","Something went wrong!");
 		}
