@@ -1,0 +1,27 @@
+.custom-toast {
+    visibility: hidden;
+    max-width: 80%;
+    width: fit-content;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 12px;
+    padding: 18px 24px;
+    position: fixed;
+    z-index: 9999;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.custom-toast.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+}

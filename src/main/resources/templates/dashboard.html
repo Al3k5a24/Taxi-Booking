@@ -1,0 +1,109 @@
+<!doctype html>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="/css/notification.css">
+</head>
+<body>
+
+	<div id="notification-box" style="display: none;">
+		<p>New reservation!</p>
+		<button onclick="redirectToTable()">OK</button>
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.1/dist/sockjs.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+
+	<script>
+    let stompClient = null;
+
+    function connect() {
+    const socket = new SockJS('/ws');
+    stompClient = Stomp.over(socket);
+
+    stompClient.connect({}, function (frame) {
+        console.log('Connected: ' + frame);
+
+        stompClient.subscribe('/topic/notifications', function (notification) {
+    showToast("Nova rezervacija: " + notification.body);
+});
+
+
+    }, function (error) {
+        console.error('WebSocket connection error: ' + error);
+    });
+}
+
+
+    function showNotification(message) {
+        alert("New reservation: " + message);
+        // Ovde možeš da dodaš logiku da prikažeš obaveštenje na UI dashboarda
+        // ili da korisnik klikom ode na /admin/readAllBookings itd.
+    }
+
+    connect();
+</script>
+
+	<script>
+function showToast(message) {
+        const toast = document.createElement("div");
+        toast.className = "custom-toast";
+        toast.innerText = message;
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+            toast.classList.add("show");
+        }, 100);
+
+        // Poruka ostaje vidljiva 8 sekundi
+        setTimeout(() => {
+            toast.classList.remove("show");
+            setTimeout(() => document.body.removeChild(toast), 500);
+        }, 4500);
+    }
+</script>
+
+
+	<div th:with="currentPage=${mycurrentpage}">
+		<h1>WELCOME TO ADMIN PANEL</h1>
+
+		<a href="readAllContacts">READ ALL CONTACTS</a><br> <a
+			href="readAllBookings">READ ALL BOOKINGS</a><br> <a
+			href="addService">ADD SERVICE</a><br> <a
+			href="changeCredentials">CHANGE CREDENTIALS</a><br> <a
+			href="/logout">Log out</a>
+	</div>
+
+	<div id="toast-container"
+		style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+=======
+=======
+>>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Admin Dashboard</title>
+</head>	
+<body>
+	<div th:with="currentPage=${mycurrentpage}">
+	    <h1>WELCOME TO ADMIN PANEL</h1>
+
+	    <a href="readAllContacts">READ ALL CONTACTS</a><br>
+	    <a href="readAllBookings">READ ALL BOOKINGS</a><br>
+		<a href="addService">ADD SERVICE</a><br>
+		<a href="changeCredentials">CHANGE CREDENTIALS</a><br>
+		
+		<a href="/logout">Log out</a>
+	</div>
+<<<<<<< HEAD
+>>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
+=======
+>>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
+</body>
+</html>
