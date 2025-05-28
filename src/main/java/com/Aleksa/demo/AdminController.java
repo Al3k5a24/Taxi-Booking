@@ -15,10 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -26,10 +22,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-<<<<<<< HEAD
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -37,13 +29,6 @@ import jakarta.servlet.http.HttpServletRequest;
 @RequestMapping("admin")
 public class AdminController {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
 	private ContactFormService cfs;
 	
 	@Autowired
@@ -72,8 +57,7 @@ public class AdminController {
 	public void setSfs(ServiceFormService sfs) {
 		this.sfs = sfs;
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 	
 	private BookingFormCrud order;
 	
@@ -90,9 +74,6 @@ public class AdminController {
 	}
 
 	@GetMapping(path={"/dashboard"})
-=======
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
 
 	@GetMapping(path={"/dashboard"})
 
@@ -102,10 +83,7 @@ public class AdminController {
 	
 	@GetMapping(path={"/dashboard"})
 	@GetMapping(path={"/dashboard","/login"})
-<<<<<<< HEAD
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
+
 	public String AboutView(HttpServletRequest req,Model m) {
 		String requestURI=req.getRequestURI();
 		m.addAttribute("mycurrentpage",requestURI);
@@ -117,11 +95,9 @@ public class AdminController {
 		String requestURI=req.getRequestURI();
 		m.addAttribute("mycurrentpage",requestURI);
 		m.addAttribute("allcontacts",cfs.displayContactService());
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 		m.addAttribute("allcontacts",orderContact.OrderByIdDesc());
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
+
 	    return "/readAllContacts"; 
 	}
 	
@@ -160,13 +136,9 @@ public class AdminController {
 		String requestURI=req.getRequestURI();
 		m.addAttribute("mycurrentpage",requestURI);
 		m.addAttribute("allBookings",sbfs.readAllBooking());
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 		m.addAttribute("allBookings",order.findAllByOrderByIdDesc());
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
-=======
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
+
 	    return "readAllBookings"; 
 	}
 
@@ -208,9 +180,5 @@ public class AdminController {
 	    return "redirect:/admin/addService"; 
 	}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
 	
 }
