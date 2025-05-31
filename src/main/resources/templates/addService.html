@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Service</title>
+  <link rel="stylesheet" href="/css/service.css">
+</head>
+<body>
+ <div th:if="${message}" align="center" th:text="${message}" style="color:green; font-weight:bold;">
+   </div><br>
+  <div class="form-container">
+ 
+ <div class="admin-panel">
+			<a href="dashboard" class="button-link">Go to Dashboard</a>
+		</div>
+ 
+    <h2>Add New Service</h2>
+    
+    <form action="addService" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="serviceImage">Service Image:</label>
+        <input type="file" id="serviceImage" name="image" accept="image/*" required>
+      </div>
+
+      <div class="form-group">
+        <label for="title">Service Title:</label>
+        <input type="text" id="title" name="title" placeholder="Enter service title" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Service Description:</label>
+        <textarea id="description" name="description" placeholder="Enter service description" required></textarea>
+      </div>
+
+      <button type="submit">Add Service</button>
+    </form>
+  </div>
+
+</body>
+</html>
