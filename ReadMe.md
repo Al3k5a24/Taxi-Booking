@@ -20,7 +20,7 @@ A full-featured Java-based Taxi Booking system that allows users to book rides a
 
 --🚖 Ride Booking System (Select origin, destination, time)
 
--👥 User Registration and Login (Admin / Customer)
+-👥 Registration and Login (Admin / Customer)
 
 --🛠️ Admin Dashboard (Manage users, rides, drivers)
 
