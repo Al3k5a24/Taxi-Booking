@@ -41,7 +41,10 @@ A full-featured Java-based Taxi Booking system that allows users to book rides a
 - **MySQL**
 - **Thymeleaf / Bootstrap**
 - **Maven** (for dependency management)
-
+- **MailSender**
+- **SockJS**
+- **STOMP**
+- **Spring WebSocket** 
 ---
 
 ## Usage
