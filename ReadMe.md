@@ -19,12 +19,17 @@ A full-featured Java-based Taxi Booking system that allows users to book rides a
 ## Features
 
 --🚖 Ride Booking System (Select origin, destination, time)
+
 -👥 User Registration and Login (Admin / Customer)
+
 --🛠️ Admin Dashboard (Manage users, rides, drivers)
+
 --🔐 Authentication & Role-based Access
+
 --💾 Persistent data storage using MySQL
---📁 Clean MVC architecture
+
 --🔔 Real-time notifications for new bookings and updates
+
 --📧 Automated email confirmations for bookings
 
 ---
