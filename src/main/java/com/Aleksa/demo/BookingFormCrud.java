@@ -16,7 +16,13 @@ public interface BookingFormCrud extends JpaRepository<bookingForm, Integer>{
 	
 	@Override
 	public void deleteById(Integer id);
+<<<<<<< HEAD
+<<<<<<< HEAD
 	
 	List<bookingForm> findAllByOrderByIdDesc();
 
+=======
+>>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
+=======
+>>>>>>> 3370273bef81e31fd3f94ebd365bf87bfe0d6353
 }
