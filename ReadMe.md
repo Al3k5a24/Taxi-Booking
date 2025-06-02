@@ -20,19 +20,16 @@ A full-featured Java-based Taxi Booking system that allows users to book rides a
 
 --🚖 Ride Booking System (Select origin, destination, time)
 
--👥 Registration and Login (Admin / Customer)
+-👥 Registration and Login (Admin / Driver)
 
 --🛠️ Admin Dashboard (Manage users, rides, drivers)
 
 --🔐 Authentication & Role-based Access
 
---💾 Persistent data storage using MySQL
-
 --🔔 Real-time notifications for new bookings and updates
 
 --📧 Automated email confirmations for bookings
 
----
 
 ## Screenshots
 <h2 align="center">📸 All screenshots will be available soon at: <a href="https://github.com/YourUsername/TaxiBooking/tree/main/images">Images</a></h2>
