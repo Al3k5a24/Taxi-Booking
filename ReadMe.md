@@ -1,4 +1,4 @@
-# <h1 style="font-size: 36px; text-align: center; margin: 0;">TaxiBooking Web Application</h1>
+# <h1 style="font-size: 36px; text-align: center; margin: 0;">Taxi Booking Web Application</h1>
 
 A full-featured Java-based Taxi Booking system that allows users to book rides and admins to manage drivers and trips efficiently. The application is built using **Java**, **Spring Boot**, and **MySQL**, with support for user authentication, role-based access, and CRUD operations.
 
