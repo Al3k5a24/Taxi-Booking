@@ -1,6 +1,5 @@
 
-# <h1 style="font-size: 36px; text-align: center; margin: 0;">Taxi Booking Web Application</h1>
-## Taxi Booking Web Application🚖 
+# <h1 style="font-size: 36px; text-align: center; margin: 0;">Taxi Booking Web Application 🚖 </h1>
 
 A web-based taxi booking platform developed using the Spring Framework. This application facilitates users in booking taxis online and provides drivers with tools to manage their rides efficiently.
 
