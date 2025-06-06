@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Driver Registration - Admin Portal</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Register New Driver</h1>
+        <form id="driverRegistrationForm" novalidate>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter full name" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email" required />
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required />
+
+            <label for="licenseNumber">Driver's License Number:</label>
+            <input type="text" id="licenseNumber" name="licenseNumber" placeholder="Enter license number" required />
+
+            <button type="submit">Register Driver</button>
+        </form>
+    </div>
+
+    <script src="driver.js"></script>
+</body>
+</html>
