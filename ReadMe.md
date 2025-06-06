@@ -1,26 +1,25 @@
+
 # <h1 style="font-size: 36px; text-align: center; margin: 0;">Taxi Booking Web Application</h1>
 
-A full-featured Java-based Taxi Booking system that allows users to book rides and admins to manage drivers and trips efficiently. The application is built using **Java**, **Spring Boot**, and **MySQL**, with support for user authentication, role-based access, and CRUD operations.
+A web-based taxi booking platform developed using the Spring Framework. This application facilitates users in booking taxis online and provides drivers with tools to manage their rides efficiently.
 
 ---
 
-## 📑 Table of Contents
+## Features 📌
 
-- [Features](#features)  
-- [Screenshots](#screenshots)  
-- [Tech Stack](#tech-stack)  
-- [Usage](#usage)  
-- [License](#license)  
-- [About Me](#about-me)  
-- [Installation](#installation)  
+- **User Registration & Authentication**: Secure sign-up and login functionalities for users and drivers.
+- **Taxi Booking**: Users can book rides by specifying pickup and drop-off locations.
+- **Driver Management**: Drivers can view and manage their assigned bookings.
+- **Admin Dashboard**: Administrators can oversee users, drivers, and bookings.
+- **Responsive Design**: Ensures optimal viewing experience across various devices.
 
 ---
 
-## Features
+## Technologies Used 🛠️
 
 --🚖 Ride Booking System (Select origin, destination, time)
 
--👥 Registration and Login (Admin / Driver)
+--👥 Registration and Login (Admin / Driver)
 
 --🛠️ Admin Dashboard (Manage users, rides, drivers)
 
@@ -93,6 +92,11 @@ cd TaxiBooking
 # Build and run the app
 mvn spring-boot:run
 ```
+=======
+- **Backend**: Java, Spring Boot
+- **Frontend**: HTML, CSS, JavaScript
+- **Database**: MySQL
+- **Build Tool**: Maven
 
 ## Acknowledgments 🙏
 The frontend design (HTML, CSS, JavaScript) is inspired by online templates and resources. It is not an original creation.
