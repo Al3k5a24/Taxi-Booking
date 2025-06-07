@@ -79,7 +79,7 @@ public class AdminController {
 	public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
 	    this.passwordEncoder = passwordEncoder;
 	}
-	
+
 	@GetMapping(path={"/dashboard"})
 	public String AboutView(HttpServletRequest req,Model m) {
 		String requestURI=req.getRequestURI();
@@ -195,4 +195,8 @@ public class AdminController {
 	    return "redirect:/admin/insertDriver";
 	}
 
+	public String statsView() {
+	    return "insertDriver"; 
+	}
+	
 }
