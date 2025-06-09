@@ -4,6 +4,18 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 
 ---
 
+- [Features](#features-)
+- [Technologies Used](#technologies-used-)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [Usage](#usage)
+- [Installation](#installation)
+- [License](#license)
+- [About Me](#about-me
+
+ ---
+
+
 ## Features 📌
 
 - **User Registration & Authentication**: Secure sign-up and login functionalities for users and drivers.
