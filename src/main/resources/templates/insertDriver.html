@@ -14,8 +14,7 @@
         <div class="admin-panel">
         <div th:if="${message}" th:text="${message}"></div>
 			<a href="dashboard" class="button-link">Go to Dashboard</a>
-		</div>
-		<br>
+		</div><br>
     <input type="text" th:field="*{username}" placeholder="Username" required />
     <input type="text" th:field="*{fullName}" placeholder="Full Name" required />
     <input type="email" th:field="*{email}" placeholder="Email" required />

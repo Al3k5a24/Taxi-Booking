@@ -20,5 +20,4 @@ public interface DriverCrud extends JpaRepository<Driver, Integer>{
 	public void deleteById(Integer id);
 	
 	Optional<Driver> findById(Integer id);
-
 }
