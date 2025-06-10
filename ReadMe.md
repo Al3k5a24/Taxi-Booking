@@ -80,16 +80,6 @@ This project is open-source and available under the MIT License.
 
 ---
 
-## About Me
-
-I'm a Computer and Software Engineering student from Serbia, currently focused on building my portfolio and growing as a backend developer.
-
-I'm passionate about software architecture, clean code, and scalable system design. I enjoy working with technologies like Java, Spring Boot, MySQL, and RESTful APIs. I'm also comfortable with Git for version control, and I constantly aim to improve my understanding of algorithms and system design patterns.
-
-Beyond tech, I’m a person with wide interests, always open to meeting new people and building meaningful connections — both in tech and beyond.
-
----
-
 ## Installation
 
 ```bash
