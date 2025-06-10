@@ -1,4 +1,4 @@
-//TMForm
+/*//TMForm
 (function($){
 	$.fn.TMForm=function(opt){
 		return this.each(TMForm)
@@ -110,7 +110,7 @@
 				return el.val()||false
 			}
 			
-			/*function formSubmit(){
+			function formSubmit(){
 				$('[data-constraints]',form).trigger('validate.form')
 				
 				if(!$('label.'+opt.invalidClass+',label.'+opt.emptyClass,form).length){					
@@ -138,7 +138,7 @@
 					})					
 				}				
 				return false
-			}*/
+			}
 			
 			function formReset(){
 				fieldDesolation($('[data-constraints]',form))					
@@ -256,3 +256,4 @@ $(window).load(function(){
           ownerEmail:'#' 
       })
     })
+	*/
