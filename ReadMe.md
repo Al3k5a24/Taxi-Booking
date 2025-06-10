@@ -18,7 +18,7 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 
 ## Features 📌
 
-- **User Registration & Authentication**: Secure sign-up and login functionalities for users and drivers.
+- **User Registration & Authentication**: Secure sign-up and login functionalities for admins and drivers.
 - **Taxi Booking**: Users can book rides by specifying pickup and drop-off locations.
 - **Driver Management**: Drivers can view and manage their assigned bookings.
 - **Admin Dashboard**: Administrators can oversee users, drivers, and bookings.
@@ -41,6 +41,7 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 --📧 Automated email confirmations for bookings
 
 
+
 ## Screenshots
 <h2 align="center">📸 All screenshots will be available soon at: <a href="https://github.com/YourUsername/TaxiBooking/tree/main/images">Images</a></h2>
 
@@ -61,7 +62,7 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 
 ## Usage
 
-- Login as user or admin
+- Login as driver or admin
 - Book rides with pickup/dropoff info
 - Admin can view and manage all users, drivers, and rides
 - Monitor statistics via dashboard
@@ -104,3 +105,31 @@ cd TaxiBooking
 mvn spring-boot:run
 ```
 
+=======
+## Taxi Booking Web Application🚖 
+
+A web-based taxi booking platform developed using the Spring Framework. This application facilitates users in booking taxis online and provides drivers with tools to manage their rides efficiently.
+
+---
+
+## Features 📌
+
+- **User Registration & Authentication**: Secure sign-up and login functionalities for users and drivers.
+- **Taxi Booking**: Users can book rides by specifying pickup and drop-off locations.
+- **Driver Management**: Drivers can view and manage their assigned bookings.
+- **Admin Dashboard**: Administrators can oversee users, drivers, and bookings.
+- **Responsive Design**: Ensures optimal viewing experience across various devices.
+
+---
+
+## Technologies Used 🛠️
+
+- **Backend**: Java, Spring Boot
+- **Frontend**: HTML, CSS, JavaScript
+- **Database**: MySQL
+- **Build Tool**: Maven
+
+
+## Acknowledgments 🙏
+
+The frontend design (HTML, CSS, JavaScript) is inspired by online templates and resources. It is not an original creation.
