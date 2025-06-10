@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookings</title>
+    <link rel="stylesheet" href="/css/table-style.css">
+</head>
+<body>
+
+
+	<div id="notification-box" style="display: none;">
+		<p>New reservation!</p>
+		<button onclick="redirectToTable()">OK</button>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.1/dist/sockjs.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+	<script src="/js/notification.js"></script>
+
+
+<div id="toast" style="display:none; position: fixed; bottom: 20px; right: 20px; 
+    background: #333; color: #fff; padding: 15px; border-radius: 5px; z-index: 1000;">
+    <span id="toast-message"></span>
+    <button id="toast-btn" style="margin-left: 10px; background-color: #45a049; border: none; color: white; padding: 5px 10px; border-radius: 3px; cursor: pointer;">OK</button>
+</div>
+	<div id="toast-container"
+		style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+    <div class="table-container">
+		<div class="admin-panel">
+			<a href="dashboard" class="button-link">Go to Dashboard</a>
+		</div>
+        <h2>Read all Bookings</h2>
+        
+        <h2 th:text="${Message}"></h2>
+        
+        <table>
+            <thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>E-mail</th>
+					<th>From</th>
+					<th>To</th>
+					<th>Time</th>
+					<th>Date</th>
+					<th>Comfort</th>
+					<th>Adults</th>
+					<th>Children</th>
+					<th>Message</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+            <tbody>
+				<tr th:each="booking : ${allBookings}">
+					<td th:text="${booking.id}"></td>
+					<td th:text="${booking.name}"></td>
+					<td th:text="${booking.email}"></td>
+					<td th:text="${booking.from}"></td>
+					<td th:text="${booking.to}"></td>
+					<td th:text="${booking.time}"></td>
+					<td th:text="${booking.date}"></td>
+					<td th:text="${booking.comfort}"></td>
+					<td th:text="${booking.adult}"></td>
+					<td th:text="${booking.children}"></td>
+					<td th:text="${booking.message}"></td>
+					<td>
+                   <a th:href="@{admin/deleteBooking/{id}(id=${booking.id})}" class="btn-delete">Delete</a>
+                </td>
+				</tr>
+			</tbody>
+        </table>
+    </div>
+
+</body>
+</html>
