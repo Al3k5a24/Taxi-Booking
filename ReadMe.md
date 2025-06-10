@@ -103,7 +103,4 @@ cd TaxiBooking
 # Build and run the app
 mvn spring-boot:run
 ```
-=======
-- **Backend**: Java, Spring Boot
-- **Frontend**: HTML, CSS, JavaScript
-- **Database**: MySQL
+
