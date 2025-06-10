@@ -19,17 +19,17 @@
 	overflow-y: auto;
 }
 
-@keyframes slideIn {from { transform:translateX(100%);
 
 @keyframes slideIn {from { transform:translateX(100%);
 	opacity: 0;
-}}}}
+}
 
 to {
 	transform: translateX(0);
 	opacity: 1;
 }
 
+}
 #toast-message {
 	margin-left: 15px;
 	border: none;

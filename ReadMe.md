@@ -1,3 +1,4 @@
+
 # <h1 style="font-size: 36px; margin: 0;">Taxi Booking Web Application 🚖 </h1>
 
 A web-based taxi booking platform developed using the Spring Framework. This application facilitates users in booking taxis online and provides drivers with tools to manage their rides efficiently.
@@ -6,6 +7,7 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 
 - [Features](#features-)
 - [Technologies](#technologies-)
+- [Demo](#demo)
 - [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
 - [Usage](#usage)
@@ -23,6 +25,7 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 - **Driver Management**: Drivers can view and manage their assigned bookings.
 - **Admin Dashboard**: Administrators can oversee users, drivers, and bookings.
 - **Responsive Design**: Ensures optimal viewing experience across various devices.
+- **Vehicle Assignment**: Admin can assigns vehicles to drivers.
 
 ---
 
@@ -40,10 +43,12 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 
 --📧 Automated email confirmations for bookings
 
-
+---
 
 ## Demo
 <h2 align="center">All demo videos of web application will be soon available here!</h2>
+
+## Screenshots
 <h2 align="center">📸 All screenshots will be available soon at: <a href="https://github.com/YourUsername/TaxiBooking/tree/main/images">Images</a></h2>
 
 ---
@@ -104,33 +109,3 @@ cd TaxiBooking
 
 # Build and run the app
 mvn spring-boot:run
-```
-
-=======
-## Taxi Booking Web Application🚖 
-
-A web-based taxi booking platform developed using the Spring Framework. This application facilitates users in booking taxis online and provides drivers with tools to manage their rides efficiently.
-
----
-
-## Features 📌
-
-- **User Registration & Authentication**: Secure sign-up and login functionalities for users and drivers.
-- **Taxi Booking**: Users can book rides by specifying pickup and drop-off locations.
-- **Driver Management**: Drivers can view and manage their assigned bookings.
-- **Admin Dashboard**: Administrators can oversee users, drivers, and bookings.
-- **Responsive Design**: Ensures optimal viewing experience across various devices.
-
----
-
-## Technologies Used 🛠️
-
-- **Backend**: Java, Spring Boot
-- **Frontend**: HTML, CSS, JavaScript
-- **Database**: MySQL
-- **Build Tool**: Maven
-
-
-## Acknowledgments 🙏
-
-The frontend design (HTML, CSS, JavaScript) is inspired by online templates and resources. It is not an original creation.
