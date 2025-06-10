@@ -16,7 +16,7 @@ A web-based taxi booking platform developed using the Spring Framework. This app
  ---
 
 
-## Features 📌
+## Features 
 
 - **User Registration & Authentication**: Secure sign-up and login functionalities for admins and drivers.
 - **Taxi Booking**: Users can book rides by specifying pickup and drop-off locations.
@@ -27,7 +27,7 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 
 ---
 
-## Technologies 🛠️
+## Technologies 
 
 --🚖 Ride Booking System (Select origin, destination, time)
 
@@ -90,13 +90,6 @@ cd TaxiBooking
 
 # Open the project in your IDE (IntelliJ, Eclipse, or VS Code)
 
-- **Backend**: Java, Spring Boot
-- **Frontend**: HTML, CSS, JavaScript
-- **Database**: MySQL
-- **Build Tool**: Maven
-
-## Acknowledgments 🙏
-The frontend design (HTML, CSS, JavaScript) is inspired by online templates and resources. It is not an original creation.
 
 # Build and run the app
 mvn spring-boot:run
