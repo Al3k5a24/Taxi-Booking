@@ -251,5 +251,9 @@ public class AdminController {
 	public String AssignCarView(Model model) {
 		model.addAttribute("driver", dc.displayDriverService());
 	    return "AssignCar"; 
+
+
+	public String statsView() {
+	    return "insertDriver"; 
 	}
 }
