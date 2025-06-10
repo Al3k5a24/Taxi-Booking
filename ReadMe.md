@@ -6,6 +6,7 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 
 - [Features](#features-)
 - [Technologies](#technologies-)
+- [Demo](#demo)
 - [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
 - [Usage](#usage)
@@ -23,6 +24,7 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 - **Driver Management**: Drivers can view and manage their assigned bookings.
 - **Admin Dashboard**: Administrators can oversee users, drivers, and bookings.
 - **Responsive Design**: Ensures optimal viewing experience across various devices.
+- **Vehicle Assignment**: Admin can assigns vehicles to drivers.
 
 ---
 
@@ -40,10 +42,12 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 
 --📧 Automated email confirmations for bookings
 
-
+---
 
 ## Demo
 <h2 align="center">All demo videos of web application will be soon available here!</h2>
+
+## Screenshots
 <h2 align="center">📸 All screenshots will be available soon at: <a href="https://github.com/YourUsername/TaxiBooking/tree/main/images">Images</a></h2>
 
 ---
