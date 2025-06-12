@@ -54,6 +54,7 @@
 				<td th:text="${contact.message}"></td>
 				 <td>
                    <a th:href="@{/deleteContact/{id}(id=${contact.id})}" class="btn-delete">Delete</a>
+                   <a th:href="@{admin/deleteContact/{id}(id=${contact.id})}" class="btn-delete">Delete</a>
                 </td>
                 </tr>
             </tbody>

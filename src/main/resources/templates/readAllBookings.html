@@ -66,6 +66,7 @@
 					<td th:text="${booking.message}"></td>
 					<td>
                    <a th:href="@{/deleteBooking/{id}(id=${booking.id})}" class="btn-delete">Delete</a>
+                   <a th:href="@{admin/deleteBooking/{id}(id=${booking.id})}" class="btn-delete">Delete</a>
                 </td>
 				</tr>
 			</tbody>

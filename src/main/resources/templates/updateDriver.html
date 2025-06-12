@@ -10,6 +10,7 @@
     <div class="container">
         <h1>Update Drivers Data</h1>
            <form th:action="@{/updateDriver}" th:object="${driver}" method="post">
+           <form th:action="@{/admin/updateDriver}" th:object="${driver}" method="post">
         <div class="admin-panel">
         <div th:if="${message}" th:text="${message}"></div>
 		</div>
