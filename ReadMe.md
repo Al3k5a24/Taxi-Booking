@@ -55,7 +55,7 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 
 - **Java 17+**
 - **Spring Boot**
-- **MySQL**
+- **PostGreSQL**
 - **Thymeleaf / Bootstrap**
 - **Maven** (for dependency management)
 - **MailSender**

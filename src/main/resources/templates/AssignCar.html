@@ -17,7 +17,6 @@
 				th:text="${driver.fullName + ' (' + driver.username + ')'}">
 			</option>
 		</select> 
-		
 		<label for="carSelect">Select Car</label> 
 		<select id="carSelect" name="carSelect" required>
 	<form th:action="@{/admin/assignCar}" method="post">
