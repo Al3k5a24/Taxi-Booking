@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Service</title>
+  <link rel="stylesheet" href="/css/service.css">
+</head>
+<body>
+ <div th:if="${message}" align="center" th:text="${message}" style="color:green; font-weight:bold;">
+   </div><br>
+   
+   
+	<div id="notification-box" style="display: none;">
+		<p>New reservation!</p>
+		<button onclick="redirectToTable()">OK</button>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.1/dist/sockjs.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+	<script src="/js/notification.js"></script>
+
+
+<div id="toast" style="display:none; position: fixed; bottom: 20px; right: 20px; 
+    background: #333; color: #fff; padding: 15px; border-radius: 5px; z-index: 1000;">
+    <span id="toast-message"></span>
+    <button id="toast-btn" style="margin-left: 10px; background-color: #45a049; border: none; color: white; padding: 5px 10px; border-radius: 3px; cursor: pointer;">OK</button>
+</div>
+	<div id="toast-container"
+		style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+   
+  <div class="form-container">
+ 
+ <div class="admin-panel">
+			<a href="dashboard" class="button-link">Go to Dashboard</a>
+		</div>
+ 
+    <h2>Add New Service</h2>
+    
+    <form action="addService" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="serviceImage">Service Image:</label>
+        <input type="file" id="serviceImage" name="image" accept="image/*" required>
+      </div>
+
+      <div class="form-group">
+        <label for="title">Service Title:</label>
+        <input type="text" id="title" name="title" placeholder="Enter service title" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Service Description:</label>
+        <textarea id="description" name="description" placeholder="Enter service description" required></textarea>
+      </div>
+
+      <button type="submit">Add Service</button>
+    </form>
+  </div>
+
+</body>
+</html>
