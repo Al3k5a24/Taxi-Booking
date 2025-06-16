@@ -35,7 +35,6 @@ public class SecurityConfig {
 	
 //  Ova metoda omogućava da se lozinke šifruju (hash-uju) pre nego što se sačuvaju u bazu
 //	i da se sigurno proveravaju prilikom logovanja korisnika
-	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 	    return PasswordEncoderFactories.createDelegatingPasswordEncoder();
