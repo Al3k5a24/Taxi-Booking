@@ -40,8 +40,6 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 
 --📧 Automated email confirmations for bookings
 
----
-
 ## Demo
 <h2 align="center">All demo videos of web application will be soon available here!</h2>
 
