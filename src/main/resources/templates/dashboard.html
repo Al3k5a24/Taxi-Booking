@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/notification.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Notification popups -->
+  <div id="notification-box" style="display: none;">
+    <p>New reservation!</p>
+    <button onclick="redirectToTable()">OK</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.1/dist/sockjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+  <script src="/js/notification.js"></script>
+
+  <div id="toast" style="display:none; position: fixed; bottom: 20px; right: 20px; 
+      background: #333; color: #fff; padding: 15px; border-radius: 5px; z-index: 1000;">
+    <span id="toast-message"></span>
+    <button id="toast-btn" style="margin-left: 10px; background-color: #45a049; border: none; color: white; padding: 5px 10px; border-radius: 3px; cursor: pointer;">OK</button>
+  </div>
+  <div id="toast-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+  <h1 class="text-center mt-4">Welcome to Admin Panel</h1>
+
+
+  <div class="container mt-4">
+    <div class="card shadow">
+      <div class="card-body">
+        <h3 class="text-center mb-4">📊 Data</h3>
+        <div class="row g-3 justify-content-center">
+          <div class="col-6 col-md-3">
+            <a href="/admin/readAllContacts" class="btn btn-primary w-100">Read All Contacts</a>
+          </div>
+          <div class="col-6 col-md-3">
+            <a href="readAllBookings" class="btn btn-primary w-100">Read All Bookings</a>
+          </div>
+          <div class="col-6 col-md-3">
+            <a href="readAllDrivers" class="btn btn-primary w-100">Read All Drivers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-4">
+    <div class="card shadow">
+      <div class="card-body">
+        <h3 class="text-center mb-4">⚙️ Service Management</h3>
+        <div class="row g-3 justify-content-center">
+          <div class="col-6 col-md-3">
+            <a href="changeCredentials" class="btn btn-primary w-100">Change Credentials</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-4">
+    <div class="card shadow">
+      <div class="card-body">
+        <h3 class="text-center mb-4">🚗 Driver & Car</h3>
+        <div class="row g-3 justify-content-center">
+          <div class="col-6 col-md-3">
+            <a href="insertDriver" class="btn btn-primary w-100">Insert New Driver</a>
+          </div>
+          <div class="col-6 col-md-3">
+            <a href="AssignCar" class="btn btn-primary w-100">Assign Car</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="container mt-4 mb-5">
+    <div class="text-center">
+      <a href="/logout" class="btn btn-danger px-5">Log Out</a>
+    </div>
+  </div>
+
+</body>
+</html>
