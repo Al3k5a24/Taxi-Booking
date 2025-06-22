@@ -6,6 +6,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +17,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
@@ -42,6 +56,12 @@ public class AdminController {
 		this.sbfs = sbfs;
 	}
 	
+	private ServiceFormService sfs;
+	
+	@Autowired
+	public void setSfs(ServiceFormService sfs) {
+		this.sfs = sfs;
+	}
 	private BookingFormCrud order;
 	
 	@Autowired
@@ -138,9 +158,44 @@ public class AdminController {
 		redirectAttribute.addFlashAttribute("Message","Booking successfully deleted!");
 		 return "redirect:/admin/readAllBookings";
 	}
+
+	@GetMapping(path={"admin/deleteBooking/{id}"})
+	public String deleteBooking(@PathVariable("id") int id,RedirectAttributes redirectAttribute) {
+		sbfs.deleteBookingService(id);
+		redirectAttribute.addFlashAttribute("Message","Contact successfully deleted!");
+		 return "redirect:/admin/readAllBookings";
+	}
+
+	@GetMapping(path={"addService"})
+	public String addServiceView() {
+	    return "addService"; 
+	}
 	
 	
-	@GetMapping(path={"admin/insertDriver"})
+	@PostMapping(path={"/addService"})
+	public String addService(@ModelAttribute ServiceForm serviceform,
+			@RequestParam("image") MultipartFile multipartFile,RedirectAttributes redirectAttribute) {
+		
+		String original=multipartFile.getOriginalFilename();
+		serviceform.setImage(original);
+		try {
+			ServiceForm sf=sfs.addService(serviceform, multipartFile);
+			if(sf!=null) {
+				redirectAttribute.addFlashAttribute("message","Successfully added!");
+			}else {
+				redirectAttribute.addFlashAttribute("message","Something went wrong!");
+			}
+		} catch (Exception e) {
+			redirectAttribute.addFlashAttribute("message","Something went very wrong!");
+		}
+		
+		
+	    return "redirect:/admin/addService"; 
+	}
+	
+	
+	@GetMapping(path={"insertDriver"})
+
 	public String statsView(Model model) {
 		model.addAttribute("driver", new Driver());
 	    return "insertDriver"; 
@@ -158,6 +213,20 @@ public class AdminController {
         }
         return "redirect:/admin/insertDriver";
     }
+	@PostMapping("admin/insertDriver")
+	public String registerDriver(@ModelAttribute("driver") Driver driver, RedirectAttributes redirectAttributes) {
+	    try {
+	        String encodedPassword = passwordEncoder.encode(driver.getPassword());
+	        driver.setPassword(encodedPassword);
+
+	        dc.saveDriverService(driver);
+	        redirectAttributes.addFlashAttribute("message", "Driver successfully registered!");
+	    } catch (Exception e) {
+	        redirectAttributes.addFlashAttribute("message", "Error: " + e.getMessage());
+	    }
+
+	    return "redirect:/admin/insertDriver";
+	}
 	
 	@GetMapping(path={"admin/readAllDrivers"})
 	public String readallDriver(HttpServletRequest req,Model m) {
@@ -194,6 +263,7 @@ public class AdminController {
 	public String updateDriver(@ModelAttribute("driver") Driver driver,
 			@RequestParam("password") String password,
 			RedirectAttributes redirectAttribute) {
+	public String updateDriver(@ModelAttribute("driver") Driver driver,RedirectAttributes redirectAttribute) {
 		Driver existingDriver=fid.findById(driver.getId()).orElse(null);
 		if(existingDriver==null) {
 			return "redirect:/admin/readAllDrivers";
@@ -208,6 +278,11 @@ public class AdminController {
     	
 	    if(password!=null && !password.isBlank()) {
 	         existingDriver.setPassword(password);
+		
+	    //if admin enters new password,it will be encrypted and saved
+	    if(driver.getPassword()!=null && !driver.getPassword().isBlank()) {
+	    	 String encryptedPassword = passwordEncoder.encode(driver.getPassword());
+	         existingDriver.setPassword(encryptedPassword);
 	    }
 	    
 	    if(dc.saveDriverService(existingDriver)!=null) {
@@ -245,5 +320,10 @@ public class AdminController {
 		     e.printStackTrace(); 
 		}
 		return "redirect:/admin/AssignCar";
+	}
+	@GetMapping(path={"AssignCar"})
+	public String AssignCarView(Model model) {
+		model.addAttribute("driver", dc.displayDriverService());
+	    return "AssignCar"; 
 	}
 }

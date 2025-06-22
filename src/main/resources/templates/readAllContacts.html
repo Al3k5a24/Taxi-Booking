@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="/css/table-style.css">
 </head>
 <body>
-
-
 	<div id="notification-box" style="display: none;">
 		<p>New reservation!</p>
 		<button onclick="redirectToTable()">OK</button>
@@ -33,7 +31,6 @@
         <h2>Read all Contacts</h2>
         
         <h2 th:text="${Message}"></h2>
-        
         <table>
             <thead>
                 <tr>
@@ -54,6 +51,8 @@
 				<td th:text="${contact.message}"></td>
 				 <td>
                    <a th:href="@{/deleteContact/{id}(id=${contact.id})}" class="btn-delete">Delete</a>
+                   <a th:href="@{admin/deleteContact/{id}(id=${contact.id})}" class="btn-delete">Delete</a>
+
                 </td>
                 </tr>
             </tbody>

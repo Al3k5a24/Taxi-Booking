@@ -48,6 +48,7 @@ public class UserDetailsServiceImp implements UserDetailsService{
 	    return org.springframework.security.core.userdetails.User
 	            .withUsername(admin.getUsername())
 	            .password(admin.getPassword()).authorities("ROLE_ADMIN")
+	            .password(admin.getPassword())
 	            .build();
 	}
 

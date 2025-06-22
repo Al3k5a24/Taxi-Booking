@@ -42,7 +42,6 @@ public class Driver {
 	@Column(length=15)
 	private Long phone;
 
-
 	@NotNull(message="Licence number can't be empty!")
 	@Min(value=1000000,message="Licence must have at least 7 digits")
 	@Column(length=15)
@@ -52,6 +51,13 @@ public class Driver {
     @NotBlank(message = "Password can't be blank!")
     @Size(min = 8, message = "Password must be at least 8 characters!")
     @Column(length = 60)
+	@NotNull(message="Phone number can't be empty!")
+	@Min(value=1000000,message="Phone must have at least 7 digits")
+	@Column(length=15)
+	private Long licence;
+
+	@NotEmpty(message="Password can't be empty!")
+	@NotBlank(message="Password can't be blank!")
 	private String password;
 	
 	public Driver() {

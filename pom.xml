@@ -99,10 +99,7 @@
     <artifactId>postgresql</artifactId>
     <version>42.7.5</version>
 </dependency>
-
-
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
