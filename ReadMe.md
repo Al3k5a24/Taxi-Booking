@@ -52,7 +52,6 @@ A web-based taxi booking platform developed using the Spring Framework. This app
   <img src="images/read_Drivers.png" width="500"/>
   <img src="images/read_Bookings.png" width="500"/>
   <img src="images/update_Driver.png" width="500"/>
-  <img src="images/change_Credentials.png" width="500"/>
   <img src="images/assign_Car.png" width="500"/>
  <img src="images/insert_Driver.png" width="500"/>
 </p>
