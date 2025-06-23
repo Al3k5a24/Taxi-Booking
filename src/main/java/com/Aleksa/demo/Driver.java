@@ -137,5 +137,4 @@ public class Driver {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
 }
