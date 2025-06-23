@@ -13,7 +13,6 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
 	@Autowired
 	private LogOutHandler lgh;
 	
@@ -35,7 +34,16 @@ public class SecurityConfig {
 			.logout(logout -> logout
 				.logoutUrl("/logout")
 			);
-
+		httpSecurity.csrf(csrf->csrf.disable()).authorizeHttpRequests(authorize->authorize.
+				requestMatchers("/admin/**").authenticated()
+				.requestMatchers("/**").permitAll()).formLogin(
+						form->form
+						.permitAll()).formLogin(form->form.loginPage("/login")
+						.defaultSuccessUrl("/admin/dashboard", true) )
+		.logout(logout->logout
+				.logoutUrl("/logout"))
+		
+		;
 		return httpSecurity.build();
 	}
 	
@@ -46,6 +54,4 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-	
 }

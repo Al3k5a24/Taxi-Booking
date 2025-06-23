@@ -29,8 +29,6 @@ form.addEventListener('submit', function(e) {
     alert('Please enter a valid phone number.');
     return;
   }
-
-
   if (license.length < 5) {
     alert("Driver's license number must be at least 5 characters.");
     return;

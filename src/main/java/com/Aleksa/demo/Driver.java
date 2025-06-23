@@ -50,17 +50,14 @@ public class Driver {
 	@Column(length=15)
 	@Pattern(regexp = "^[0-9]{7,15}$", message = "Phone must be between 7 and 15 digits")
 	private String licence;
-	
-	@NotEmpty(message = "Password can't be empty!")
-    @NotBlank(message = "Password can't be blank!")
-    @Size(min = 8, message = "Password must be at least 8 characters!")
-    @Column(length = 60)
+
+	@NotEmpty(message="Password can't be empty!")
+	@NotBlank(message="Password can't be blank!")
 	private String password;
 	
 	public Driver() {
 		super();
 	}
-	
 	public Driver(Integer id,String username, String fullName, String email, String phone, String licence, String password) {
 		super();
 		this.id=id;
@@ -126,6 +123,4 @@ public class Driver {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	
 }
