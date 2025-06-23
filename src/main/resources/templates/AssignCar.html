@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Assign Car to Driver</title>
+<link rel="stylesheet" href=/css/assignCar.css />
+</head>
+<body>
+
+	<h1>Assign Car to Driver</h1>
+
+<h2 align="center" th:text="${message}"></h2>
+
+	<form th:action="@{/admin/AssignCar}" method="post">
+		<select id="driverId" name="driverId" required>
+			<option value="" disabled selected>Select a driver</option>
+			<option th:each="driver:${drivers}" th:value="${driver.id}"
+				th:text="${driver.fullName + ' (' + driver.username + ')'}">
+			</option>
+		</select> 
+		
+		<label for="carSelect">Select Car</label> 
+		<select id="carSelect" name="carSelect" required>
+			<option value="" disabled selected>Select a car</option>
+			<option value="Toyota_Camry">Toyota Camry</option>
+			<option value="Toyota_Prius">Toyota Prius</option>
+			<option value="Honda_Accord">Honda Accord</option>
+			<option value="Chevrolet_Malibu">Chevrolet Malibu</option>
+			<option value="Ford_Fusion">Ford Fusion</option>
+		</select> 
+		
+		<label for="plateNumber">Select Plate Number</label> <select
+			id="plateNumber" name="plateNumber" required>
+			<option value="" disabled selected>Select plate number</option>
+		</select>
+
+		<button type="submit">Assign Car</button>
+		<a href="/admin/dashboard" class="button-link">Cancel</a>
+
+	</form>
+	
+	<script src="/js/assignCar.js"></script>
+
+</body>
+</html>
