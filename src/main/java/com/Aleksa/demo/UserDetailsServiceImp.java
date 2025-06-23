@@ -8,7 +8,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import jakarta.annotation.PostConstruct;
 
 @Service
@@ -48,6 +47,7 @@ public class UserDetailsServiceImp implements UserDetailsService{
 	    return org.springframework.security.core.userdetails.User
 	            .withUsername(admin.getUsername())
 	            .password(admin.getPassword()).authorities("ROLE_ADMIN")
+	            .password(admin.getPassword())
 	            .build();
 	}
 

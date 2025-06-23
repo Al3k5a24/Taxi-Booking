@@ -1,3 +1,4 @@
+
 const form = document.getElementById('container');
 
 form.addEventListener('submit', function(e) {
@@ -29,7 +30,6 @@ form.addEventListener('submit', function(e) {
     alert('Please enter a valid phone number.');
     return;
   }
-
 
   if (license.length < 5) {
     alert("Driver's license number must be at least 5 characters.");

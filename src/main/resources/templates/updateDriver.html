@@ -10,12 +10,12 @@
     <div class="container">
         <h1>Update Drivers Data</h1>
            <form th:action="@{/updateDriver}" th:object="${driver}" method="post">
+           <form th:action="@{/admin/updateDriver}" th:object="${driver}" method="post">
         <div class="admin-panel">
         <div th:if="${message}" th:text="${message}"></div>
 		</div>
 		<br>
 	<input type="hidden" th:field="*{id}" />
-	
 	<label>Username:</label>
     <input type="text" th:field="*{username}" placeholder="Username" required />
     
@@ -30,13 +30,15 @@
     
     <label>Licence:</label>
     <input type="tel" th:field="*{licence}" placeholder="Licence Number" required />
-    
     <label>Password:</label>
     <input type="text" name="password" placeholder="Password" />
     <button type="submit">Update driver</button>
 </form>
     </div>
-
+    <input type="text" placeholder="Password" />
+    <button type="submit">Update driver</button>
+</form>
+    </div>
     <script src="driver.js"></script>
 </body>
 </html>
