@@ -1,5 +1,4 @@
 const form = document.getElementById('container');
-
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 

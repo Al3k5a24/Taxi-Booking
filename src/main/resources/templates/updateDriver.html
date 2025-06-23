@@ -16,7 +16,6 @@
 		</div>
 		<br>
 	<input type="hidden" th:field="*{id}" />
-	
 	<label>Username:</label>
 	<div th:if="${#fields.hasErrors('username')}" class="error-message" th:errors="*{username}"></div>
     <input type="text" th:field="*{username}" placeholder="Username" />

@@ -5,11 +5,9 @@ const plateData={
 	"Chevrolet_Malibu": ["MI101-CM", "OH202-CM", "PA303-CM", "IN404-CM", "WI505-CM"],
 	"Ford_Fusion": ["CA123-FF", "TX234-FF", "FL345-FF", "NY456-FF", "NV567-FF"]
 };
-
 const carSelect=document.getElementById("carSelect");
 const plateSelect=document.getElementById("plateNumber");
 carSelect.addEventListener("change",function(){
-	
 	const selectedCar=this.value;
 	const plates = plateData[selectedCar]||[];
 	

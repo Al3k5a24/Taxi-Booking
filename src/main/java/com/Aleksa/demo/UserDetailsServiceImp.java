@@ -19,7 +19,6 @@ public class UserDetailsServiceImp implements UserDetailsService{
 	public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
 		this.passwordEncoder = passwordEncoder;
 	}
-
 	@Autowired
 	public void setAdmincrud(AdminCrud admincrud) {
 		this.admincrud = admincrud;

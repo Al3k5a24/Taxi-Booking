@@ -161,7 +161,6 @@
 					                <span style="color:red" th:if="${#fields.hasErrors('from')}" th:errors="*{from}"></span>
 					            </div>
 					        </div>
-
 					        <div class="fl1">
 					            <div class="tmInput">
 					                <input name="email" th:value="*{email}" placeholder="Email:" type="text" data-constraints="@NotEmpty @Required @Email">
