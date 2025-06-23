@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Driver Registration - Admin Portal</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Register New Driver</h1>
+           <form th:action="@{/admin/insertDriver}" th:object="${driver}" method="post">
+        <div class="admin-panel">
+        <div th:if="${message}" th:text="${message}"></div>
+			<a href="dashboard" class="button-link">Go to Dashboard</a>
+		</div>
+		<br>
+	<div th:if="${#fields.hasErrors('username')}" class="error-message" th:errors="*{username}"></div>
+    <input type="text" name="username" th:field="*{username}" placeholder="Username" />
+
+    <div th:if="${#fields.hasErrors('fullName')}" class="error-message" th:errors="*{fullName}"></div>
+    <input type="text" name="fullname" th:field="*{fullName}" placeholder="Full Name" />
+
+    <div th:if="${#fields.hasErrors('email')}" class="error-message" th:errors="*{email}"></div>
+    <div th:if="${emailMessage}" class="error-message" th:text="${emailMessage}"></div>
+    <input type="email" th:field="*{email}" placeholder="Email"/>
+
+    <div th:if="${#fields.hasErrors('phone')}" class="error-message" th:errors="*{phone}"></div>
+    <input type="tel" name="phone" th:field="*{phone}" placeholder="Phone" />
+
+    <div th:if="${#fields.hasErrors('licence')}" class="error-message" th:errors="*{licence}"></div>
+    <input type="text" name="licence" th:field="*{licence}" placeholder="Licence Number" />
+
+    <div th:if="${#fields.hasErrors('password')}" class="error-message" th:errors="*{password}"></div>
+    <input type="password" th:field="*{password}" placeholder="Password" />
+    
+    <button type="submit">Register Driver</button>
+</form>
+    </div>
+
+    <script src="driver.js"></script>
+</body>
+</html>
