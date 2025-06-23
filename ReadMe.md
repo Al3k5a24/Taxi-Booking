@@ -87,7 +87,6 @@ cd TaxiBooking
 
 # Open the project in your IDE (IntelliJ, Eclipse, or VS Code)
 
-
 # Build and run the app
 mvn spring-boot:run
 
