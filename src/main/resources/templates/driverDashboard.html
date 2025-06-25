@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/driver-dashboard.css}">
+</head>
+<body>
+
+     <h1 class="text-center mt-4">Welcome to Driver Panel</h1>
+     <br><br>
+     
+     <div class="info-row" th:object="${driver}">
+                <div class="info-box">
+                    <div class="info-label">Full Name</div>
+                    <div class="info-value" th:text="${driver.fullName}"></div>
+                </div>
+                <div class="info-box">
+                    <div class="info-label">License</div>
+                    <div class="info-value" th:text="${driver.licence}"></div>
+                </div>
+            </div>
+            
+            <div class="info-row" th:object="${driver}">
+                <div class="info-box">
+                    <div class="info-label">Email</div>
+                    <div class="info-value" th:text="${driver.email}"></div>
+                </div>
+                <div class="info-box">
+                    <div class="info-label">Phone</div>
+                    <div class="info-value" th:text="${driver.phone}"></div>
+                </div>
+            </div>
+            
+            <div class="info-row" th:object="${car}" >
+                <div class="info-box">
+                    <div class="info-label">Vehicle</div>
+                    <div class="info-value" th:text="${car.model}"></div>
+                </div>
+                <div class="info-box">
+                    <div class="info-label">Plate</div>
+                    <div class="info-value" th:text="${car.plateNumbers}"></div>
+                </div>
+            </div>
+
+    <div class="driver-container">
+        <div class="action-buttons">
+            <a href="#" class="action-btn">Read All Accepted Bookings
+            </a>
+            <a href="/loginDriver" class="action-btn logout-btn">Logout
+            </a>
+        </div>
+    </div>
+</body>
+</html>
