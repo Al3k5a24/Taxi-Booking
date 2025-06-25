@@ -6,9 +6,7 @@
 <link rel="stylesheet" href=/css/assignCar.css />
 </head>
 <body>
-
 	<h1>Assign Car to Driver</h1>
-
 <h2 align="center" th:text="${message}"></h2>
 
 	<form th:action="@{/admin/AssignCar}" method="post">
@@ -21,6 +19,22 @@
 		
 		<label for="carSelect">Select Car</label> 
 		<select id="carSelect" name="carSelect" required>
+		<label for="carSelect">Select Car</label> 
+		<select id="carSelect" name="carSelect" required>
+		<label for="carSelect">Select Car</label> 
+		<select id="carSelect" name="carSelect" required>
+		<label for="carSelect">Select Car</label> 
+		<select id="carSelect" name="carSelect" required>
+	<form th:action="@{/admin/assignCar}" method="post">
+		<select id="driverId" name="driverId" required>
+			<option value="" disabled selected>Select a driver</option>
+			<option th:each="driver:${drivers}" th:value="${driver.id}"
+				th:text="${driver.fullname + ' (' + driver.username + ')'}">
+			</option>
+		</select> 
+		
+		<label for="carSelect">Select Car</label> <select id="carSelect"
+			name="carSelect" required>
 			<option value="" disabled selected>Select a car</option>
 			<option value="Toyota_Camry">Toyota Camry</option>
 			<option value="Toyota_Prius">Toyota Prius</option>
@@ -38,6 +52,21 @@
 		<a href="/admin/dashboard" class="button-link">Cancel</a>
 	</form>
 	
+	<script>
+    function loadCarData() {
+        const driverSelect = document.getElementById("driverId");
+        const selectedOption = driverSelect.options[driverSelect.selectedIndex];
+        
+        const carModel = selectedOption.getAttribute("data-car-model");
+        const plateNumber = selectedOption.getAttribute("data-plate");
+
+        document.getElementById("carModel").value = carModel || "";
+        document.getElementById("plateNumber").value = plateNumber || "";
+    }
+</script>
+
+	</form>
+
 	<script src="/js/assignCar.js"></script>
 
 </body>

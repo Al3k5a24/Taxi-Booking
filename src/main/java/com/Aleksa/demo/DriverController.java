@@ -30,6 +30,11 @@ public class DriverController {
         this.passwordEncoder = passwordEncoder;
         this.cc=cc;
         this.cfs=cfs;
+
+    @Autowired
+    public DriverController(DriverCrud dc, PasswordEncoder passwordEncoder) {
+        this.dc = dc;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/loginDriver")
@@ -78,6 +83,14 @@ public class DriverController {
         model.addAttribute("driver", driver);
         model.addAttribute("car", Car);
 
+    public String dashboard(HttpSession session, Model model) {
+        Driver driver = (Driver) session.getAttribute("loggedInDriver");
+
+        if (driver == null) {
+            return "redirect:/loginDriver";
+        }
+
+        model.addAttribute("driver", driver);
         return "driverDashboard";
     }
 }

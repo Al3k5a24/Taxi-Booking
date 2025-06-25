@@ -55,12 +55,13 @@ public class Driver {
     @NotBlank(message = "Password can't be blank!")
     @Size(min = 8, message = "Password must be at least 8 characters!")
     @Column(length = 60)
+	@NotEmpty(message="Password can't be empty!")
+	@NotBlank(message="Password can't be blank!")
 	private String password;
 	
 	public Driver() {
 		super();
 	}
-	
 	public Driver(Integer id,String username, String fullName, String email, String phone, String licence, String password) {
 		super();
 		this.id=id;
@@ -129,3 +130,5 @@ public class Driver {
 	
 	
 }
+}
+

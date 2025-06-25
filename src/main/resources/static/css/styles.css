@@ -10,7 +10,6 @@ h1 {
     color: #2c3e50;
     margin-bottom: 30px;
 }
-
 form {
     background-color: #ffffff;
     max-width: 400px;
@@ -96,8 +95,6 @@ button:hover {
     box-sizing: border-box;
 }
 
-
-
 .error-message {
     background-color: #f8d7da;
     color: #842029;
@@ -106,3 +103,5 @@ button:hover {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
 }
+
+

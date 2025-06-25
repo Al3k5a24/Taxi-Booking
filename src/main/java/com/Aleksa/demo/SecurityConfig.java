@@ -13,7 +13,6 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
 	@Autowired
 	private LogOutHandler lgh;
 	
@@ -35,17 +34,24 @@ public class SecurityConfig {
 			.logout(logout -> logout
 				.logoutUrl("/logout")
 			);
-
+		httpSecurity.csrf(csrf->csrf.disable()).authorizeHttpRequests(authorize->authorize.
+				requestMatchers("/admin/**").authenticated()
+				.requestMatchers("/**").permitAll()).formLogin(
+						form->form
+						.permitAll()).formLogin(form->form.loginPage("/login")
+						.defaultSuccessUrl("/admin/dashboard", true) )
+		.logout(logout->logout
+				.logoutUrl("/logout"))
+		
+		;
 		return httpSecurity.build();
 	}
 	
 //  Ova metoda omogućava da se lozinke šifruju (hash-uju) pre nego što se sačuvaju u bazu
 //	i da se sigurno proveravaju prilikom logovanja korisnika
-	
+
 	@Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-	
+    }2
 }

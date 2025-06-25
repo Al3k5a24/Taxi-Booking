@@ -12,6 +12,9 @@ const plateSelect=document.getElementById("plateNumber");
 
 carSelect.addEventListener("change",function(){
 	
+const carSelect=document.getElementById("carSelect");
+const plateSelect=document.getElementById("plateNumber");
+carSelect.addEventListener("change",function(){
 	const selectedCar=this.value;
 	const plates = plateData[selectedCar]||[];
 	
@@ -23,4 +26,5 @@ carSelect.addEventListener("change",function(){
 		option.textContent=plate;
 		plateSelect.appendChild(option);
 	});
+});
 });

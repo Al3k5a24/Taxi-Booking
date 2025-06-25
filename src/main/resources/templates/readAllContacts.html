@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="/css/table-style.css">
 </head>
 <body>
-
-
 	<div id="notification-box" style="display: none;">
 		<p>New reservation!</p>
 		<button onclick="redirectToTable()">OK</button>
@@ -16,7 +14,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.1/dist/sockjs.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
 	<script src="/js/notification.js"></script>
-
 
 <div id="toast" style="display:none; position: fixed; bottom: 20px; right: 20px; 
     background: #333; color: #fff; padding: 15px; border-radius: 5px; z-index: 1000;">
@@ -34,6 +31,7 @@
         
         <h2 th:text="${Message}"></h2>
         
+        <h2 th:text="${Message}"></h2>
         <table>
             <thead>
                 <tr>
@@ -54,6 +52,7 @@
 				<td th:text="${contact.message}"></td>
 				 <td>
                    <a th:href="@{/deleteContact/{id}(id=${contact.id})}" class="btn-delete">Delete</a>
+                   <a th:href="@{admin/deleteContact/{id}(id=${contact.id})}" class="btn-delete">Delete</a>
                 </td>
                 </tr>
             </tbody>

@@ -33,11 +33,38 @@
 
     <div th:if="${#fields.hasErrors('password')}" class="error-message" th:errors="*{password}"></div>
     <input type="password" th:field="*{password}" placeholder="Password" />
-    
     <button type="submit">Register Driver</button>
 </form>
     </div>
-
+    <button type="submit">Register Driver</button>
+</form>
+    </div>
+	<div th:if="${message}" class="error-message" th:text="${message}"></div>
+    <input type="text" th:field="*{username}" placeholder="Username" required />
+    
+    <div th:if="${message}" class="error-message" th:text="${message}"></div>
+    <input type="text" th:field="*{fullName}" placeholder="Full Name" required />
+    
+    <div th:if="${message}" class="error-message" th:text="${message}"></div>
+    <input type="email" th:field="*{email}" placeholder="Email" required />
+    
+    <div th:if="${message}" class="error-message" th:text="${message}"></div>
+    <input type="tel" th:field="*{phone}" placeholder="Phone" required />
+    
+    <div th:if="${message}" class="error-message" th:text="${message}"></div>
+    <input type="tel" th:field="*{licence}" placeholder="Licence Number" required />
+    
+    <div th:if="${message}" class="error-message" th:text="${message}"></div>
+    <input type="password" th:field="*{password}" placeholder="Password" required />
+    <input type="text" th:field="*{username}" placeholder="Username" required />
+    <input type="text" th:field="*{fullName}" placeholder="Full Name" required />
+    <input type="email" th:field="*{email}" placeholder="Email" required />
+    <input type="tel" th:field="*{phone}" placeholder="Phone" required />
+    <input type="tel" th:field="*{licence}" placeholder="Licence Number" required />
+    <input type="password" th:field="*{password}" placeholder="Password" required />
+    <button type="submit">Register Driver</button>
+</form>
+    </div>
     <script src="driver.js"></script>
 </body>
 </html>
