@@ -2,7 +2,6 @@
 
 A web-based taxi booking platform developed using the Spring Framework. This application facilitates users in booking taxis online and provides drivers with tools to manage their rides efficiently.
 
----
 
 - [Features](#features-)
 - [Demo](#demo)

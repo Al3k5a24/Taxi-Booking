@@ -9,7 +9,6 @@ const plateData={
 const carSelect=document.getElementById("carSelect");
 const plateSelect=document.getElementById("plateNumber");
 
-
 carSelect.addEventListener("change",function(){
 	
 const carSelect=document.getElementById("carSelect");

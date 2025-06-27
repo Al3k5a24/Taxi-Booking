@@ -7,10 +7,8 @@
     <link rel="stylesheet" th:href="@{/css/driver-dashboard.css}">
 </head>
 <body>
-
      <h1 class="text-center mt-4">Welcome to Driver Panel</h1>
      <br><br>
-     
      <div class="info-row" th:object="${driver}">
                 <div class="info-box">
                     <div class="info-label">Full Name</div>
@@ -21,7 +19,6 @@
                     <div class="info-value" th:text="${driver.licence}"></div>
                 </div>
             </div>
-            
             <div class="info-row" th:object="${driver}">
                 <div class="info-box">
                     <div class="info-label">Email</div>

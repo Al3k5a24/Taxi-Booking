@@ -15,7 +15,6 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 	@Autowired
 	private LogOutHandler lgh;
-	
 	//uklanja security pri ucitavanju sajta
 	//security je sad samo pod admin sekcijom
 	@Bean

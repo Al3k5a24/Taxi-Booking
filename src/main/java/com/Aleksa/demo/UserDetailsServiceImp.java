@@ -23,7 +23,6 @@ public class UserDetailsServiceImp implements UserDetailsService{
 	public void setAdmincrud(AdminCrud admincrud) {
 		this.admincrud = admincrud;
 	}
-	
 	//ako nema admina,kreira jednog admina
 	@PostConstruct
 	public void init() {

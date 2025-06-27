@@ -1,7 +1,6 @@
 const form = document.getElementById('container');
 form.addEventListener('submit', function(e) {
   e.preventDefault();
-
   const username=form.username.value.trim();
   const fullName = form.fullName.value.trim();
   const email = form.email.value.trim();

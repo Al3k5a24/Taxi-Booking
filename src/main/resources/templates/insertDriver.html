@@ -20,7 +20,6 @@
 
     <div th:if="${#fields.hasErrors('fullName')}" class="error-message" th:errors="*{fullName}"></div>
     <input type="text" name="fullname" th:field="*{fullName}" placeholder="Full Name" />
-
     <div th:if="${#fields.hasErrors('email')}" class="error-message" th:errors="*{email}"></div>
     <div th:if="${emailMessage}" class="error-message" th:text="${emailMessage}"></div>
     <input type="email" th:field="*{email}" placeholder="Email"/>
