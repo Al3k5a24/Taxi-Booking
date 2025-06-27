@@ -39,7 +39,7 @@ A web-based taxi booking platform developed using the Spring Framework. This app
 
 ## Demo
 <p align="center">
-  <img src="/images/demo-gif.gif" alt="Coding GIF" width="500"/>
+  <img src="/images/demo-gif.gif" alt="Coding GIF" width="800"/>
 </p>
 
 ## Screenshots
